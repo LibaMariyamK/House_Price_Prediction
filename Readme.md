@@ -14,7 +14,6 @@ house_price_prediction/
 ├── requirements.txt        # Python dependencies
 ├── templates/
 │   └── index.html          # HTML template for the web interface
-└── venv/                   # Python virtual environment 
 ```
 
 ---
