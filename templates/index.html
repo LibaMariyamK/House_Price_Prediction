@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f0f4f8; padding: 40px;">
+    <div style="max-width: 500px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2 style="text-align: center; color: #333;">🏠 House Price Prediction</h2>
+        <form action="/predict" method="post">
+            <label>Area (sqft):</label><br>
+            <input type="number" name="area_sqft" style="width: 100%; padding: 8px; margin: 6px 0 12px;"><br>
+
+            <label>Bedrooms:</label><br>
+            <input type="number" name="bedrooms" style="width: 100%; padding: 8px; margin: 6px 0 12px;"><br>
+
+            <label>Bathrooms:</label><br>
+            <input type="number" step="0.5" name="bathrooms" style="width: 100%; padding: 8px; margin: 6px 0 12px;"><br>
+
+            <label>Year Built:</label><br>
+            <input type="number" name="year_built" style="width: 100%; padding: 8px; margin: 6px 0 12px;"><br>
+
+            <label>Distance to City Center (km):</label><br>
+            <input type="number" step="0.1" name="distance_to_city_center" style="width: 100%; padding: 8px; margin: 6px 0 12px;"><br>
+
+            <label>Has Pool:</label><br>
+            <select name="has_pool" style="width: 100%; padding: 8px; margin: 6px 0 12px;">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+
+            <label>Condition (1-5):</label><br>
+            <input type="number" name="condition" min="1" max="5" style="width: 100%; padding: 8px; margin: 6px 0 12px;"><br>
+
+            <label>Crime Rate (per 1000):</label><br>
+            <input type="number" step="0.1" name="crime_rate" style="width: 100%; padding: 8px; margin: 6px 0 12px;"><br>
+
+            <label>School Rating (1-10):</label><br>
+            <input type="number" min="1" max="10" name="school_rating" style="width: 100%; padding: 8px; margin: 6px 0 20px;"><br>
+
+            <input type="submit" value="Predict" style="width: 100%; padding: 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px;">
+        </form>
+
+        {% if prediction_text %}
+            <h3 style="margin-top: 20px; text-align: center; color: #28a745;">{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
